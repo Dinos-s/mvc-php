@@ -1,0 +1,14 @@
+{
+    "description": "MVC Celke",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app",
+            "Core\\": "core",
+            "Adms\\": "app/adms"
+        },
+        "require": {}
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
