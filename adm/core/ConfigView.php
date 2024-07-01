@@ -37,9 +37,9 @@
         */
         public function loadViewLogin():void {
             if(file_exists('app/' . $this->nameView . '.php')){
-                include 'app/adms/Views/include/head.php';
+                include 'app/adms/Views/include/head_login.php';
                 include 'app/' .$this->nameView . '.php';
-                include 'app/adms/Views/include/footer.php';
+                include 'app/adms/Views/include/footer_login.php';
             } else {
                 die("Erro - página não encontrada: Por favor tente novamente. Se o problema persistir, fale com o nosso administrador: " . EMAILADM);
             }
