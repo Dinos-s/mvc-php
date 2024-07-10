@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/custom_adm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Login MVC</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <img src="images/users/images.png" alt="logo" class="logo">
+        </div>
+
+        <div class="navbar-container">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="number">7</span>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        <li>
+                            <img src="images/users/images.png" alt="userImg" width="40">
+                            <div class="text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avatar">
+                <img src="images/users/images.png" alt="userImg">
+                <div class="dropdown-menu setting">
+                    <div class="item">
+                        <span class="fa-solid fa-user"></span> Perfil
+                    </div>
+                    <div class="item">
+                        <span class="fa-solid fa-gear"></span> configuração
+                    </div>
+                    <div class="item">
+                        <span class="fa-solid fa-arrow-right-from-bracket"></span> sair
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="sidebar active">
+            <a href="index.html" class="sidebar-nav">
+                <i class="icon fa-solid fa-house"></i>
+                <span>Dashbord</span>
+            </a>
+
+            <a href="#" class="sidebar-nav active">
+                <i class="icon fa-solid fa-users"></i>
+                <span>Listar</span>
+            </a>
+
+            <a href="login.html" class="sidebar-nav">
+                <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="top-list">
+                    <span class="titulo-content">Listar</span>
+                    <div class="top-list-rigth">
+                        <button type="button" class="btn-success">Catastrar</button>
+                    </div>
+                </div>
+                <table class="table-list">
+                    <thead class="table-head">
+                        <tr>
+                            <th class="list-head-content">ID</th>
+                            <th class="list-head-content">Nome</th>
+                            <th class="list-head-content table-sm-none">E-mail</th>
+                            <th class="list-head-content table-sm-none">Coluna 1</th><th class="list-head-content table-md-none">Coluna 2</th><th class="list-head-content table-lg-none">Coluna 3</th>
+                            <th class="list-head-content">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list-body">
+                        <tr>
+                            <td class="list-body-content">1</td>
+                            <td class="list-body-content">GMR</td>
+                            <td class="list-body-content table-sm-none">GMR@gmail.com</td>
+                            <td class="list-body-content table-sm-none">Coluna 1</td>
+                            <td class="list-body-content table-md-none">Coluna 2</td>
+                            <td class="list-body-content table-lg-none">Coluna 3</td>
+                            <td class="list-body-content">
+                                <button type="button" class="btn-primary">Visualizar</button>
+                                <button type="button" class="btn-warning">Editar</button>
+                                <button type="button" class="btn-danger">Apagar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="content-pagination">
+                    <div class="pagination">
+                        <a href="#">&laquo;</a>
+                        <a href="#">1</a>
+                        <a href="#" class="active">2</a>
+                        <a href="#">3</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/custom_adm.js"></script>
+</body>
+</html>
