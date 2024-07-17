@@ -65,6 +65,21 @@ if (isset($_SESSION['msg'])) {
         ?>
     </select><br><br>
 
+    <label>Nível de acesso:<span style="color: #f00;">*</span> </label>
+    <select name="adms_access_levels_id" id="adms_access_levels_id">
+        <option value="">Selecione</option>
+        <?php
+        foreach($this->data['select']['lev'] as $lev){
+            extract($sit);
+            if((isset($valorForm['adms_access_levels_id'])) and ($valorForm['adms_access_levels_id'] == $id_sit)){
+                echo "<option value='$id_lev' selected>$name_lev</option>";
+            }else{
+                echo "<option value='$id_lev'>$name_lev</option>";
+            }
+        }
+        ?>
+    </select><br><br>
+
     <?php
     $password = "";
     if (isset($valorForm['password'])) {

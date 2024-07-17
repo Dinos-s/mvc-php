@@ -47,7 +47,13 @@ class AdmsLogin
         $this->data = $data;
 
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, nickname, email, password, image, adms_sits_user_id FROM adms_users WHERE user =:user OR email =:email LIMIT :limit", "user={$this->data['user']}&email={$this->data['user']}&limit=1");
+        $viewUser->fullRead("SELECT usr.id, usr.name, usr.nickname, usr.email, usr.password, usr.image, usr.adms_sits_user_id, usr.adms_access_levels_id,
+                            lev.order_levels
+                            FROM adms_users AS usr
+                            INNER JOIN adms_access_levels AS lev ON lev.id=usr.adms_access_levels_id
+                            WHERE usr.user =:user 
+                            OR usr.email =:email 
+                            LIMIT :limit", "user={$this->data['user']}&email={$this->data['user']}&limit=1");
 
         $this->resultBD = $viewUser->getResult();
         if ($this->resultBD) {
@@ -93,6 +99,8 @@ class AdmsLogin
             $_SESSION['user_nickname'] = $this->resultBD[0]['nickname'];
             $_SESSION['user_email'] = $this->resultBD[0]['email'];
             $_SESSION['user_image'] = $this->resultBD[0]['image'];
+            $_SESSION['adms_access_level_id'] = $this->resultBD[0]['adms_access_level_id'];
+            $_SESSION['order_levels'] = $this->resultBD[0]['order_levels'];
             $this->result = true;
         } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário ou a senha incorreta!</p>";
