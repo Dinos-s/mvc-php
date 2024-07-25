@@ -60,7 +60,14 @@ class AdmsEditUsersImage
         $this->id = $id;
 
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, image FROM adms_users WHERE id=:id", "id={$this->id}");
+        $viewUser->fullRead(
+            "SELECT usr.id, usr.image 
+            FROM adms_users AS usr 
+            INNER JOIN adms_access_levels AS lev 
+            ON lev.id=usr.adms_access_levels_id
+            WHERE usr.id=:id AND lev.order_levels >:order_levels", 
+            "id={$this->id}&order_levels=". $_SESSION['order_levels']
+        );
 
         $this->resultBD = $viewUser->getResult();
         if ($this->resultBD) {

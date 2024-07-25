@@ -99,7 +99,7 @@ class AdmsLogin
             $_SESSION['user_nickname'] = $this->resultBD[0]['nickname'];
             $_SESSION['user_email'] = $this->resultBD[0]['email'];
             $_SESSION['user_image'] = $this->resultBD[0]['image'];
-            $_SESSION['adms_access_level_id'] = $this->resultBD[0]['adms_access_level_id'];
+            $_SESSION['adms_access_levels_id'] = $this->resultBD[0]['adms_access_levels_id'];
             $_SESSION['order_levels'] = $this->resultBD[0]['order_levels'];
             $this->result = true;
         } else {

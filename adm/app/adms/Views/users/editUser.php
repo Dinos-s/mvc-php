@@ -88,6 +88,21 @@
         ?>
     </select><br><br>
 
+    <label>Nível de acesso:<span style="color: #f00;">*</span> </label>
+    <select name="adms_access_levels_id" id="adms_access_levels_id">
+        <option value="">Selecione</option>
+        <?php
+        foreach($this->data['select']['lev'] as $lev){
+            extract($lev);
+            if((isset($valorForm['adms_access_levels_id'])) and ($valorForm['adms_access_levels_id'] == $id_lev)){
+                echo "<option value='$id_lev' selected>$name_lev</option>";
+            }else{
+                echo "<option value='$id_lev'>$name_lev</option>";
+            }
+        }
+        ?>
+    </select><br><br>
+
     <span style="color: #f00;">* Campo Obrigatório</span><br><br>
 
     <button type="submit" name="SendEditUser" value="Salvar">Salvar</button>

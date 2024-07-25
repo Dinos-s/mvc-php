@@ -80,7 +80,7 @@ class AdmsAddAccessLevels
         }
     }
 
-    public function viewLastAccessLevels()
+    private function viewLastAccessLevels()
     {
         $viewLastAccessLevels = new \App\adms\Models\helper\AdmsRead();
         $viewLastAccessLevels->fullRead("SELECT order_levels FROM adms_access_levels ORDER BY order_levels DESC");

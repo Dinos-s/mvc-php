@@ -63,7 +63,7 @@ class CarregarPgAdm {
 
     //Verificar se a página é privada e chamar o método para verificar se o usuário está logado;
     private function pgPrivada():void {
-        $this->listPgPrivada = ["Dashboard", "ListUsers", "ViewUsers", "AddUsers", "EditUsers", "EditUsersPassword", "EditUsersImage", "DeleteUsers", "ViewProfile", "EditProfile", "EditProfilePassword", "EditProfileImage", "ListSitsUsers", "ViewSitsUsers", "AddSitsUsers", "EditSitsUsers", "DeleteSitsUsers", "AddColors", "ListColors", "ViewColors", "EditColors", "DeleteColors", "AddConfEmails", "EditConfEmails", "DeleteConfEmails", "ListConfEmails", "ViewConfEmails", "EditConfEmailsPassword", "AddAccessLevels", "EditAccessLevels", "DeleteAccessLevels", "ListAccessLevels", "ViewAccessLevels"];
+        $this->listPgPrivada = ["Dashboard", "ListUsers", "ViewUsers", "AddUsers", "EditUsers", "EditUsersPassword", "EditUsersImage", "DeleteUsers", "ViewProfile", "EditProfile", "EditProfilePassword", "EditProfileImage", "ListSitsUsers", "ViewSitsUsers", "AddSitsUsers", "EditSitsUsers", "DeleteSitsUsers", "AddColors", "ListColors", "ViewColors", "EditColors", "DeleteColors", "AddConfEmails", "EditConfEmails", "DeleteConfEmails", "ListConfEmails", "ViewConfEmails", "EditConfEmailsPassword", "AddAccessLevels", "EditAccessLevels", "DeleteAccessLevels", "ListAccessLevels", "ViewAccessLevels", "OrderAccessLevels"];
         
         if (in_array($this->urlController, $this->listPgPrivada)) {
             $this->verifyLogin();

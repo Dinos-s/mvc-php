@@ -115,8 +115,14 @@ class AdmsAddUsers
         $list->fullRead("SELECT id id_sit, name name_sit FROM adms_sits_users ORDER BY name ASC");
         $registry['sit'] = $list->getResult();
 
+        // Esse read ler todos a tabela de niveis de acesso e retorna somente os de ordem superior do que o usuário logou
         $listLevel = new \App\adms\Models\helper\AdmsRead();
-        $listLevel->fullRead("SELECT id id_lev, name name_lev FROM adms_access_levels ORDER BY name ASC");
+        $listLevel->fullRead(
+            "SELECT id id_lev, name name_lev 
+            FROM adms_access_levels 
+            WHERE order_levels >:order_levels 
+            ORDER BY name ASC", "order_levels=". $_SESSION['order_levels'] // procura os registro de order_levels superior ao atual, do usuario;
+        );
         $registry['lev'] = $listLevel->getResult();
 
         $this->listRegistryAdd = [

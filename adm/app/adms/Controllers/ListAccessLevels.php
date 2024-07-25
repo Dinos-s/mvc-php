@@ -29,6 +29,7 @@ class ListAccessLevels
             $this->data['listAccessLevels'] = [];
         }
 
+        $this->data['pag'] = $this->page;
         $loadView = new \Core\ConfigView("adms/Views/accessLevels/listAccessLevels", $this->data);
         $loadView->loadView();
     }

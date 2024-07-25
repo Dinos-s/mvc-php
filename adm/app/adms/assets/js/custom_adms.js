@@ -221,6 +221,15 @@ if (formAddUser) {
         }
 
         //Receber o valor do campo
+        var adms_access_levels_id = document.querySelector("#adms_access_levels_id").value;
+        // Verificar se o campo esta vazio
+        if (adms_access_levels_id === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo Nível de acesso!</p>";
+            return;
+        }
+
+        //Receber o valor do campo
         var password = document.querySelector("#password").value;
         // Verificar se o campo esta vazio
         if (password === "") {
@@ -288,6 +297,15 @@ if (formEditUser) {
         if (adms_sits_user_id === "") {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo situação!</p>";
+            return;
+        } 
+        
+        //Receber o valor do campo
+        var adms_access_levels_id = document.querySelector("#adms_access_levels_id").value;
+        // Verificar se o campo esta vazio
+        if (adms_access_levels_id === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo nível de acesso!</p>";
             return;
         } else {
             document.getElementById("msg").innerHTML = "<p></p>";

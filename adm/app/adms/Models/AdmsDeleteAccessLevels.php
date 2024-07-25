@@ -38,7 +38,7 @@ class AdmsDeleteAccessLevels
 
         if($this->viewAccessLevels()){
             $deleteAccessLevel = new \App\adms\Models\helper\AdmsDelete();
-            $deleteAccessLevel->exeDelete("adms_access_levels", "WHERE id =:id", "id={$this->id}");
+            $deleteAccessLevel->exeDelete("adms_access_levels", "WHERE id=:id", "id={$this->id}");
     
             if ($deleteAccessLevel->getResult()) {
                 $_SESSION['msg'] = "<p style='color: green;'>Nível de acesso apagado com sucesso!</p>";

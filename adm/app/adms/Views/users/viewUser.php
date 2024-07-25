@@ -36,6 +36,7 @@ if (!empty($this->data['viewUser'])) {
     echo "E-mail: $email <br>";
     echo "Usuário: $user <br>";
     echo "Situação do Usuário: <span style='color: $color;'>$name_sit</span><br>";
+    echo "Nível de acesso do Usário: $name_lev <br>";
     echo "Cadastrado: " . date('d/m/Y H:i:s', strtotime($created)) . " <br>";
     echo "Editado: ";
 

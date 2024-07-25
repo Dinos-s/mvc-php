@@ -70,8 +70,8 @@ if (isset($_SESSION['msg'])) {
         <option value="">Selecione</option>
         <?php
         foreach($this->data['select']['lev'] as $lev){
-            extract($sit);
-            if((isset($valorForm['adms_access_levels_id'])) and ($valorForm['adms_access_levels_id'] == $id_sit)){
+            extract($lev);
+            if((isset($valorForm['adms_access_levels_id'])) and ($valorForm['adms_access_levels_id'] == $id_lev)){
                 echo "<option value='$id_lev' selected>$name_lev</option>";
             }else{
                 echo "<option value='$id_lev'>$name_lev</option>";
