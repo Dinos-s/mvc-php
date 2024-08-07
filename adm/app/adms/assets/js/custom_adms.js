@@ -674,3 +674,16 @@ if (formEditConfEmailsPass) {
         }
     });
 }
+
+const formAddAccessLevels = document.getElementById("form-add-access-levels");
+if (formAddAccessLevels) {
+    formAddAccessLevels.addEventListener("submit", async (e) => {
+        var name = document.querySelector("#name").value;
+        // Verificar se o campo esta vazio
+        if (name === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!</p>";
+            return;
+        }
+    })
+}
