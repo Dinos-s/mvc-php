@@ -53,8 +53,7 @@ class AdmsViewPages {
             LEFT JOIN adms_sits_pgs AS sit ON sit.id=pg.adms_sits_pgs_id
             LEFT JOIN adms_groups_pgs AS grpg ON grpg.id=pg.adms_groups_pgs_id
             LEFT JOIN adms_colors AS col ON col.id=sit.adms_color_id
-            FROM adms_pages pg
-            WHERE id=:id",
+            WHERE pg.id=:id",
             "id={$this->id}"
         );
 

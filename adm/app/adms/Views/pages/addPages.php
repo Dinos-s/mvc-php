@@ -68,13 +68,22 @@ if (isset($_SESSION['msg'])) {
     <label>Método:<span style="color: #f00">*</span></label>
     <input type="text" name="menu_metodo" id="menu_metodo" placeholder="Nome do Método no menu" value="<?php echo $menu_metodo; ?>" required><br><br>
 
+    <?php 
+        $observacao = "";
+        if (isset($valorForm['obs'])) {
+            $observacao = $valorForm['obs'];
+        }
+    ?>
+    <label>Obsevação:</label>
+    <input type="text" name="obs" id="obs" placeholder="Observação" value="<?php echo $obs; ?>"><br><br>
+
     <?php
     $icon = "";
     if (isset($valorForm['icon'])) {
         $icon = $valorForm['icon'];
     }
     ?>
-    <label>Icon:<span style="color: #f00">*</span></label>
+    <label>Icon: </label>
     <input type="text" name="icon" id="icon" class="input-adm" placeholder="Ícone a ser apresentado no menu" value="<?php echo $icon; ?>"> <br><br>
 
     <label>Página Pública:<span style="color: #f00;">*</span> </label>
@@ -116,7 +125,7 @@ if (isset($_SESSION['msg'])) {
     <select name="adms_groups_pgs_id" id="adms_groups_pgs_id">
         <option value="">Selecione</option>
         <?php
-        foreach($this->data['select']['group_page'] as $group_pg){
+        foreach($this->data['select']['group_pg'] as $group_pg){
             extract($group_pg);
             if ((isset($valorForm['adms_groups_pgs_id'])) and ($valorForm['adms_groups_pgs_id'] == $id_grp)){ 
                 echo "<option value='$id_grp' selected>$name_grp</option>";
@@ -140,7 +149,7 @@ if (isset($_SESSION['msg'])) {
                 }
             }
         ?>
-    </select>
+    </select><br><br>
 
     <span style="color: #f00;">* Campo Obrigatório</span><br><br>
 

@@ -115,7 +115,7 @@ class AdmsEditPages
 
         $listGroup = new \App\adms\Models\helper\AdmsRead();
         $listGroup->fullRead("SELECT id id_group, name name_group FROM adms_groups_pgs ORDER BY name ASC");
-        $registry['group_pg'] = $listType->getResult();
+        $registry['group_pg'] = $listGroup->getResult();
 
         $this->listRegistryEdit = [
             'sit_pg' => $registry['sit_pg'],

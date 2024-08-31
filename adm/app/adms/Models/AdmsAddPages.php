@@ -47,7 +47,8 @@ class AdmsAddPages
         $this->data = $data;
 
         $this->dataExitVal['icon'] = $this->data['icon'];
-        unset($this->data['icon']);
+        $this->dataExitVal['obs'] = $this->data['obs'];
+        unset($this->data['icon'], $this->data['obs']);
 
         $valEmptyField = new \App\adms\Models\helper\AdmsValEmptyField();
         $valEmptyField->valField($this->data);
@@ -67,6 +68,7 @@ class AdmsAddPages
      */
     private function add(): void
     {
+        $this->data['obs'] = $this->dataExitVal['obs'];
         $this->data['icon'] = $this->dataExitVal['icon'];
         $this->data['created'] = date("Y-m-d H:i:s");
 
@@ -89,7 +91,7 @@ class AdmsAddPages
         $registry['sit_pg'] = $list->getResult();
 
         $listTypePg = new \App\adms\Models\helper\AdmsRead();
-        $listTypePg->fullRead("SELECT id id_type, name name_type
+        $listTypePg->fullRead("SELECT id id_type, type, name name_type
             FROM adms_types_pgs ORDER BY name ASC");
         $registry['type_pg'] = $listTypePg->getResult();
 

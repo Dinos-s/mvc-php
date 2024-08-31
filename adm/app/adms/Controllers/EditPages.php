@@ -62,6 +62,9 @@ class EditPages
      */
     private function viewEditPages(): void
     {
+        $listSelect = new \App\adms\Models\AdmsEditPages();
+        $this->data['select'] = $listSelect->listSelect();
+
         $loadView = new \Core\ConfigView("adms/Views/pages/editPages", $this->data);
         $loadView->loadView();
     }

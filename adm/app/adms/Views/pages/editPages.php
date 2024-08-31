@@ -130,12 +130,12 @@
     <select name="adms_groups_pgs_id" id="adms_groups_pgs_id">
         <option value="">Selecione</option>
         <?php
-        foreach($this->data['select']['group_page'] as $group_pg){
+        foreach($this->data['select']['group_pg'] as $group_pg){
             extract($group_pg);
-            if ((isset($valorForm['adms_groups_pgs_id'])) and ($valorForm['adms_groups_pgs_id'] == $id_grp)){ 
-                echo "<option value='$id_grp' selected>$name_grp</option>";
+            if ((isset($valorForm['adms_groups_pgs_id'])) and ($valorForm['adms_groups_pgs_id'] == $id_group)){ 
+                echo "<option value='$id_group' selected>$name_group</option>";
             } else {
-                echo "<option value='$id_grp'>$name_grp</option>";
+                echo "<option value='$id_group'>$name_group</option>";
             }
         }
         ?>
