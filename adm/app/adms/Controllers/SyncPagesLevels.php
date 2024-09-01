@@ -12,6 +12,7 @@ if(!defined('C8L6K7E')){
  * @author Cesar <cesar@celke.com.br>
  */
 class SyncPagesLevels {
+
     /**
      * Instantiar a classe responsavel em sincronizar os niveis de acesso.
      * 
@@ -20,6 +21,9 @@ class SyncPagesLevels {
     public function index():void
     {
         $SyncPagesLevels = new \App\adms\Models\AdmsSyncPagesLevels();
-        $SyncPagesLevels->SyncPagesLevels();
+        $SyncPagesLevels->syncPagesLevels();
+
+        $urlRedirect = URLADM ."list-access-levels/index";
+        header("Location: $urlRedirect");
     }
 }

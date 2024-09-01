@@ -7,7 +7,8 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Listar Páginas</h2>";
 
-echo "<a href='" . URLADM . "add-pages/index'>Cadastrar</a><br><br>";
+echo "<a href='" . URLADM . "add-pages/index'>Cadastrar</a> ";
+echo "<a href='" . URLADM . "sync-pages-levels/index'>Sincronizar</a><br><br>";
 
 if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
