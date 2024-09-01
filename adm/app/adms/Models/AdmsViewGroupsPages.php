@@ -45,7 +45,11 @@ class AdmsViewGroupsPages {
 
         $viewGroupsPages = new \App\adms\Models\helper\AdmsRead();
         $viewGroupsPages->fullRead(
-            "SELECT id, title, name, order_group_pg, created, modificado FROM adms_groups_pgs WHERE id=:id", "id={$this->id}" );
+            "SELECT id, name, order_group_pg, created, modificado 
+            FROM adms_groups_pgs 
+            WHERE id=:id", 
+            "id={$this->id}"
+        );
 
         $this->resultBD = $viewGroupsPages->getResult();        
         if ($this->resultBD) {

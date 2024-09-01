@@ -77,8 +77,6 @@ class AdmsSyncPagesLevels
 
         $this->resultBdLevels = $listLevels->getResult();        
         if ($this->resultBdLevels) {
-            // $this->result = true;
-            // var_dump($this->resultBdLevels);
             $this->listPages();
         } else {
             $_SESSION['msg'] = "<p style='color: #f00'>Erro: Nível de acesso não encontrado!</p>";
@@ -98,8 +96,6 @@ class AdmsSyncPagesLevels
 
         $this->resultBdPages = $listPages->getResult();        
         if ($this->resultBdPages) {
-            // $this->result = true;
-            // var_dump($this->resultBdPages);
             $this->readLevels();
         } else { 
             $_SESSION['msg'] = "<p style='color: #f00'>Erro: Nenhuma página encontrada!!</p>";
@@ -116,7 +112,6 @@ class AdmsSyncPagesLevels
     {
         foreach($this->resultBdLevels as $level){
             extract($level);
-            //echo "ID do nível de acesso: $id <br>";
             $this->levelId = $id;
             $this->readPages();
         }
@@ -132,7 +127,6 @@ class AdmsSyncPagesLevels
     private function readPages() {
         foreach($this->resultBdPages as $page) {
             extract($page);
-            // echo "ID da página: $id <br>";
             $this->pageId = $id;
             $this->publish= $publish;
             $this->searchLevelPage();

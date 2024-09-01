@@ -55,7 +55,11 @@ class AdmsListGroupsPages
 
         $listGroupsPages = new \App\adms\Models\helper\AdmsRead();
         $listGroupsPages->fullRead(
-            "SELECT id, name, order_group_pg FROM adms_groups_pgs ORDER BY order_group_pg ASC LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$pagination->getOffset()}"
+            "SELECT id, name, order_group_pg 
+            FROM adms_groups_pgs 
+            ORDER BY order_group_pg ASC 
+            LIMIT :limit OFFSET :offset", 
+            "limit={$this->limitResult}&offset={$pagination->getOffset()}"
         );
 
         $this->resultBD = $listGroupsPages->getResult();        

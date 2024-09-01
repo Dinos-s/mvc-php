@@ -22,6 +22,7 @@
                 $this->data['listPermission'] = $listPermission->getResultBd();
                 $this->data['viewPermission'] = $listPermission->getResultBdLevel();
                 $this->data['pagination'] = $listPermission->getResultPg();
+                $this->data['pag'] = $this->page;
                 $this->viewPermission();
             } else {
                 $urlRedirect = URLADM ."list-access-levels/index";
@@ -30,6 +31,7 @@
         }
 
         private function viewPermission(): void {
+            $this->data['pag'] = $this->page;
             $loadView = new \Core\ConfigView("adms/Views/permission/listPermission", $this->data);
             $loadView->loadView();
         }
