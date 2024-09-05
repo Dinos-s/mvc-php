@@ -110,7 +110,7 @@ class AdmsSyncPagesLevels
     */
     private function readLevels(): void
     {
-        foreach($this->resultBdLevels as $level){
+        foreach ($this->resultBdLevels as $level) {
             extract($level);
             $this->levelId = $id;
             $this->readPages();
@@ -124,14 +124,14 @@ class AdmsSyncPagesLevels
      * armazena a publish na variável publish;
      * Instancia a searchLevelPage();
     */
-    private function readPages() {
-        foreach($this->resultBdPages as $page) {
+    private function readPages(): void{
+        foreach ($this->resultBdPages as $page) {
             extract($page);
             $this->pageId = $id;
-            $this->publish= $publish;
+            $this->publish = $publish;
             $this->searchLevelPage();
         }
-    }    
+    }   
 
     /** 
      * Lista todos os dados da tabela "amds_levels_pages", desde que,
@@ -140,13 +140,12 @@ class AdmsSyncPagesLevels
      * Caso a condição do select seja verdadeira, retorna uma mensagem de sucesso para o usuário logado;
      * Casoa não seja aceita, instaciamos o addLevelPermission();
     */
-    private function searchLevelPage(): void
-    {
+    private function searchLevelPage(): void {
         $listLevelPage = new \App\adms\Models\helper\AdmsRead();
         $listLevelPage->fullRead(
-            "SELECT id 
+            "SELECT id
             FROM adms_levels_pages
-            WHERE =:adms_access_level_id 
+            WHERE adms_access_level_id =:adms_access_level_id 
             AND adms_page_id =:adms_page_id", 
             "adms_access_level_id={$this->levelId}&adms_page_id={$this->pageId}"
         );
@@ -188,25 +187,25 @@ class AdmsSyncPagesLevels
             $_SESSION['msg'] = "<p style='color: green'>Permissões sincronizadas com sucesso!</p>";
             $this->result = true;
         } else {
-            $_SESSION['msg'] = "<p style='color:#f00'>Erro: Permissõe não podem ser sincronizadas!</p>";
+            $_SESSION['msg'] = "<p style='color:#f00'>Erro: Permissões não podem ser sincronizadas!</p>";
             $this->result= false;
         }
     }
 
     // verifica se a página está cadastrada para o nível de acesso na tabela adms_levels_pages;
     private function searchLastOrder():void {
-        $viewLastOrder = new \App\adms\Models\helper\AdmsRead();
+        $viewLastOrder = new \App\adms\Models\helper\AdmsRead;
         $viewLastOrder->fullRead(
-            "SELECT order_level_page, adms_access_level_id
+            "SELECT order_level_page, adms_access_level_id 
             FROM adms_levels_pages
             WHERE adms_access_level_id =:adms_access_level_id
             ORDER BY order_level_page DESC
             LIMIT :limit",
-            "adms_access_level_id={$this->levelId}&limit=1",
+            "adms_access_level_id={$this->levelId}&limit=1"
         );
-        
+
         $this->resultBdLastOrder = $viewLastOrder->getResult();
-        if (!$this->resultBdLastOrder) {
+        if(!$this->resultBdLastOrder){
             $this->resultBdLastOrder[0]['order_level_page'] = 0;
         }
         // var_dump($this->resultBdLastOrder);

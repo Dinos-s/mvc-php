@@ -108,7 +108,8 @@
             // $classePage = new $this->classLoad();
             // $classePage->{$this->urlMetodo}();
 
-            $loadPgAdm = new \Core\CarregarPgAdm();
+            // $loadPgAdm = new \Core\CarregarPgAdm();
+            $loadPgAdm = new \Core\CarregarPgAdmLevel();
             $loadPgAdm->loadPage($this->urlController, $this->urlMetodo, $this->urlParam);
         }
     }
