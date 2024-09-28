@@ -39,8 +39,7 @@ class AdmsViewPages {
         return $this->resultBD;
     }
 
-    public function viewPages(int $id): void
-    {
+    public function viewPages(int $id): void {
         $this->id = $id;
 
         $viewPages = new \App\adms\Models\helper\AdmsRead();

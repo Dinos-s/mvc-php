@@ -180,8 +180,8 @@ class AdmsSyncPagesLevels
         $this->dataLevelPage['adms_page_id'] = $this->pageId;
         $this->dataLevelPage['created'] = date("Y-m-d H:i:s");
 
-        $addAccessLevel = new \app\adms\Models\helper\AdmsCreate();
-        $addAccessLevel->exeCreate("amds_levels_pages", $this->dataLevelPage);
+        $addAccessLevel = new \App\adms\Models\helper\AdmsCreate();
+        $addAccessLevel->exeCreate("adms_levels_pages", $this->dataLevelPage);
 
         if ($addAccessLevel->getResult()) {
             $_SESSION['msg'] = "<p style='color: green'>Permissões sincronizadas com sucesso!</p>";

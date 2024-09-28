@@ -29,7 +29,7 @@ class DeletePages
         if (!empty($id)) {
             $this->id = (int) $id;
             $deletePages = new \App\adms\Models\AdmsDeletePages();
-            $deletePages->deletePages($this->id);            
+            $deletePages->deletePage($this->id);            
         } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Necessário selecionar um grupo da página!</p>";
         }

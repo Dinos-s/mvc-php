@@ -55,7 +55,7 @@ class AddPages{
      */
     private function viewAddPages(): void
     {
-        $listSelect = new \App\adms\Models\AdmsAddPages();;
+        $listSelect = new \App\adms\Models\AdmsAddPages();
         $this->data['select'] = $listSelect->listSelect();
 
         $loadView = new \Core\ConfigView("adms/Views/pages/addPages", $this->data);

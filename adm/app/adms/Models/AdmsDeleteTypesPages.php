@@ -12,7 +12,7 @@ if(!defined('C8L6K7E')){
  *
  * @author Celke
  */
-class AdmsDeletePages
+class AdmsDeleteTypesPages
 {
 
     /** @var bool $result Recebe true quando executar o processo com sucesso e false quando houver erro */

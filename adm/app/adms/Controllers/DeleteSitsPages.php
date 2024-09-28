@@ -17,13 +17,12 @@ class DeleteSitsPages
     /** @var int|string|null $id Recebe o id do registro */
     private int|string|null $id;
     
-    public function index(int|string|null $id = null): void
-    {
+    public function index(int|string|null $id = null): void {
 
         if (!empty($id)) {
             $this->id = (int) $id;
             $deletePages = new \App\adms\Models\AdmsDeleteSitsPages();
-            $deletePages->deleteSitsPages($this->id);            
+            $deletePages->deleteSitsPage($this->id);            
         } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Necessário selecionar uma página!</p>";
         }

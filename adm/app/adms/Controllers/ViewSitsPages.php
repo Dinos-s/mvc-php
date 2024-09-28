@@ -24,8 +24,7 @@ class ViewSitsPages
      * 
      * @return void
      */
-    public function index(int|string|null $id = null): void
-    {
+    public function index(int|string|null $id = null): void {
         if (!empty($id)) {
             $this->id = (int) $id;
 

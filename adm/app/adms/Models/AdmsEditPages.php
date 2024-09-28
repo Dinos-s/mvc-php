@@ -80,6 +80,10 @@ class AdmsEditPages
     {
         $this->data = $data;
 
+        $this->dataExitVal['icon'] = $this->data['icon'];
+        $this->dataExitVal['obs'] = $this->data['obs'];
+        unset($this->data['icon'], $this->data['obs']);
+
         $valEmptyField = new \App\adms\Models\helper\AdmsValEmptyField();
         $valEmptyField->valField($this->data);
         if ($valEmptyField->getResult()) {
@@ -90,6 +94,8 @@ class AdmsEditPages
     }
 
     private function edit(): void {
+        $this->data['icon'] = $this->dataExitVal['icon'];
+        $this->data['obs'] = $this->dataExitVal['obs'];
         $this->data['modificado'] = date("Y-m-d H:i:s");
 
         $upPage = new \App\adms\Models\helper\AdmsUpdate();

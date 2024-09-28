@@ -52,9 +52,7 @@ class AdmsDeleteSitsPages
         }   
     }
 
-    private function viewPage(): bool
-    {
-
+    private function viewPage(): bool {
         $viewPage = new \App\adms\Models\helper\AdmsRead();
         $viewPage->fullRead("SELECT id FROM adms_sits_pgs WHERE id=:id LIMIT :limit", "id={$this->id}&limit=1");
 

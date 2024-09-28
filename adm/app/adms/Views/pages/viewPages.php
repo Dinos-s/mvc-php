@@ -8,7 +8,7 @@ if(!defined('C8L6K7E')){
 echo "<h2>Detalhes da Página</h2>";
 
 echo "<a href='" . URLADM . "list-pages/index'>Listar</a><br>";
-if (!empty($this->data['viewPage'])) {
+if (!empty($this->data['viewPages'])) {
     echo "<a href='" . URLADM . "edit-pages/index/" . $this->data['viewPage'][0]['id'] . "'>Editar</a><br>";
     echo "<a href='" . URLADM . "edit-pages-password/index/" . $this->data['viewPage'][0]['id'] . "'>Editar Senha</a><br>";
     echo "<a href='" . URLADM . "edit-pages-image/index/" . $this->data['viewPage'][0]['id'] . "'>Editar Imagem</a><br>";
