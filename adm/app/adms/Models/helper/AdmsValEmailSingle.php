@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe genêrica para validar o e-mail único, somente um cadatrado pode utilizar o e-mail
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsValEmailSingle
 {

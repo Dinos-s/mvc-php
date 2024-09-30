@@ -13,7 +13,7 @@ use PDOException;
 /**
  * Classe gernérica para apagar registro no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsDelete extends AdmsConn
 {

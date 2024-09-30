@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Cadastrar o grupo de páginas no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsAddGroupsPages
 {

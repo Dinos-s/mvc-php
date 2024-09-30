@@ -15,7 +15,7 @@ if(!defined('C8L6K7E')){
  * 
  * Para cada pagina que será acessada ela, terá cada nível de acesso que está armazenenado na tabela "adms_access_levels";
  * Isso pode ser aumentado, comforme mais registros serão em ambas as tabelas forem acresentadas;
- * @author Celke
+ * @author GMR
  */
 class AdmsSyncPagesLevels
 {

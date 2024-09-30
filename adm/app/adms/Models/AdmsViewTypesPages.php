@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Visualizar o usuário no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsViewTypesPages
 {
@@ -46,10 +46,9 @@ class AdmsViewTypesPages
 
         $viewTypesPage = new \App\adms\Models\helper\AdmsRead();
         $viewTypesPage->fullRead(
-            "SELECT Type_pgs.id, Type_pgs.name, Type_pgs.created, Type_pgs.modified, col.color
-            FROM adms_Types_pgs AS Type_pgs
-            INNER JOIN adms_colors AS col ON col.id=Type_pgs.adms_color_id
-            WHERE Type_pgs.id=:id
+            "SELECT id, type, name, order_type_pg, obs, created, modificado 
+            FROM adms_types_pgs 
+            WHERE id=:id
             LIMIT :limit", "id={$this->id}&limit=1"
         );
 

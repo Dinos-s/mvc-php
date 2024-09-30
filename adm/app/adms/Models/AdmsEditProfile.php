@@ -9,7 +9,7 @@
     /**
      * Editar o perfil do usuario
      *
-     * @author Celke
+     * @author GMR
      */
     class AdmsEditProfile {
         private array|null $data;

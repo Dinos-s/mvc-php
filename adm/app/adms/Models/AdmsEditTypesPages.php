@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Editar o usuário no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsEditTypesPages
 {
@@ -53,7 +53,7 @@ class AdmsEditTypesPages
         $this->id = $id;
 
         $viewUser = new \App\adms\Models\helper\AdmsRead();
-        $viewUser->fullRead("SELECT id, name, obs FROM adms_types_pgs WHERE id=:id LIMIT :limit", "id={$this->id}&limit=1");
+        $viewUser->fullRead("SELECT id, type, name, obs FROM adms_types_pgs WHERE id=:id LIMIT :limit", "id={$this->id}&limit=1");
 
         $this->resultBD = $viewUser->getResult();
         if ($this->resultBD) {

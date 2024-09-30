@@ -12,7 +12,7 @@ use PDOException;
 /**
  * Classe gernérica para cadastrar registro no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsCreate extends AdmsConn
 {

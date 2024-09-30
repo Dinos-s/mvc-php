@@ -7,8 +7,13 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Listar Niveis de Acesso</h2>";
 
-echo "<a href='" . URLADM . "add-access-levels/index'>Cadastrar</a> ";
-echo "<a href='" . URLADM . "sync-pages-levels/index'>Sincronizar</a><br><br>";
+if($this->data['button']['add_access_levels']){
+    echo "<a href='" . URLADM . "add-access-levels/index'>Cadastrar</a> ";
+}
+
+if ($this->data['button']['sync_pages_levels']) {
+    echo "<a href='" . URLADM . "sync-pages-levels/index'>Sincronizar</a><br><br>";
+}
 
 if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
@@ -22,13 +27,26 @@ foreach ($this->data['listAccessLevels'] as $user) {
     echo "ID: $id <br>";
     echo "Nome: $name <br>";
     echo "Ordem de acesso: $orderLev <br>";
-    echo "<a href='" . URLADM . "order-access-levels/index/$id?pag=". $this->data['pag'] ."'>Ordem</a><br>";
 
-    echo "<a href='" . URLADM . "list-permission/index?level=$id'>Permissão</a><br>";
+    if($this->data['button']['order_access_levels']){
+        echo "<a href='" . URLADM . "order-access-levels/index/$id?pag=". $this->data['pag'] ."'>Ordem</a><br>";
+    }
+    
+    if ($this->data['button']['list_permission']) {
+        echo "<a href='" . URLADM . "list-permission/index?level=$id'>Permissão</a><br>";
+    }
+    
+    if ($this->data['button']['view_access_levels']) {
+        echo "<a href='" . URLADM . "view-access-levels/index/$id'>Visualizar</a><br>";
+    }
 
-    echo "<a href='" . URLADM . "view-access-levels/index/$id'>Visualizar</a><br>";
-    echo "<a href='" . URLADM . "edit-access-levels/index/$id'>Editar</a><br>";
-    echo "<a href='" . URLADM . "delete-access-levels/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+    if ($this->data['button']['edit_access_levels']) {
+        echo "<a href='" . URLADM . "edit-access-levels/index/$id'>Editar</a><br>";
+    }
+    
+    if ($this->data['button']['delete_access_levels']) {
+        echo "<a href='" . URLADM . "delete-access-levels/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+    }
     echo "<hr>";
 }
 

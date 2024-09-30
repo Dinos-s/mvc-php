@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Confirmar a chave atualizar senha. Cadastrar nova senha
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsUpdatePassword
 {

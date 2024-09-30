@@ -7,12 +7,26 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Detalhes do Usuário</h2>";
 
-echo "<a href='" . URLADM . "list-users/index'>Listar</a><br>";
+if ($this->data['button']['list_users']) {
+    echo "<a href='" . URLADM . "list-users/index'>Listar</a><br>";
+}
+
 if (!empty($this->data['viewUser'])) {
-    echo "<a href='" . URLADM . "edit-users/index/" . $this->data['viewUser'][0]['id'] . "'>Editar</a><br>";
-    echo "<a href='" . URLADM . "edit-users-password/index/" . $this->data['viewUser'][0]['id'] . "'>Editar Senha</a><br>";
-    echo "<a href='" . URLADM . "edit-users-image/index/" . $this->data['viewUser'][0]['id'] . "'>Editar Imagem</a><br>";
-    echo "<a href='" . URLADM . "delete-users/index/" . $this->data['viewUser'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    if ($this->data['button']['edit_users']) {
+        echo "<a href='" . URLADM . "edit-users/index/" . $this->data['viewUser'][0]['id'] . "'>Editar</a><br>";
+    }
+
+    if ($this->data['button']['edit_users_password']) {
+        echo "<a href='" . URLADM . "edit-users-password/index/" . $this->data['viewUser'][0]['id'] . "'>Editar Senha</a><br>";
+    }
+
+    if ($this->data['button']['edit_users_image']) {
+        echo "<a href='" . URLADM . "edit-users-image/index/" . $this->data['viewUser'][0]['id'] . "'>Editar Imagem</a><br>";
+    }
+    
+    if ($this->data['button']['delete_users']) {
+        echo "<a href='" . URLADM . "delete-users/index/" . $this->data['viewUser'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    }
 }
 
 if (isset($_SESSION['msg'])) {

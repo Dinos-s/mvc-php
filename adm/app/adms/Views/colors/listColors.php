@@ -6,7 +6,9 @@
 
     echo "<h2>Listar Cores</h2>";
 
-    echo "<a href='" . URLADM . "add-colors/index'>Cadastrar Cor</a><br><br>";
+    if ($this->data['button']['add_colors']) {
+        echo "<a href='" . URLADM . "add-colors/index'>Cadastrar Cor</a><br><br>";
+    }
 
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
@@ -19,9 +21,19 @@
         echo "ID: $id <br>";
         echo "Nome: $name <br>";
         echo "Cor: <span style='color: $color;'>$color</span> <br>";
-        echo "<a href='" . URLADM . "view-colors/index/$id'>Visualizar</a><br>";
-        echo "<a href='" . URLADM . "edit-colors/index/$id'>Editar</a><br>";
-        echo "<a href='" . URLADM . "delete-colors/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+
+        if ($this->data['button']['view_colors']) {
+            echo "<a href='" . URLADM . "view-colors/index/$id'>Visualizar</a><br>";
+        }
+
+        if ($this->data['button']['edit_colors']) {
+            echo "<a href='" . URLADM . "edit-colors/index/$id'>Editar</a><br>";
+        }
+        
+        if ($this->data['button']['delete_colors']) {
+            echo "<a href='" . URLADM . "delete-colors/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+        }        
+        
         echo "<hr>";
     }
 

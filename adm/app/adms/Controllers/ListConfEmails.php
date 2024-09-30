@@ -30,6 +30,17 @@ class ListConfEmails
             $this->data['listConfEmails'] = [];
         }
 
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'add_conf_emails'=>['menu_controller'=>'add-conf-emails', 'menu_metodo'=>'index'],
+            'view_conf_emails'=>['menu_controller'=>'view-conf-emails', 'menu_metodo'=>'index'],
+            'edit_conf_emails'=>['menu_controller'=>'edit-conf-emails', 'menu_metodo'=>'index'],
+            'delete_conf_emails'=>['menu_controller'=>'delete-conf-emails', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+        
         $loadView = new \Core\ConfigView("adms/Views/confEmails/listConfEmails", $this->data);
         $loadView->loadView();
     }

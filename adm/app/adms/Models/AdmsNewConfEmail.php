@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Solicitar novo link para confirmar o e-mail
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsNewConfEmail 
 {

@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe gernérica para paginar registro no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsPagination {
     private int $page;

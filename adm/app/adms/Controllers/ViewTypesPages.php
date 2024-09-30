@@ -47,6 +47,16 @@ class ViewTypesPages
 
     private function viewTypesPages(): void
     {
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'list_types_pages'=>['menu_controller'=>'list-types-pages', 'menu_metodo'=>'index'],
+            'edit_types_pages'=>['menu_controller'=>'edit-types-pages', 'menu_metodo'=>'index'],
+            'delete_types_pages'=>['menu_controller'=>'delete-types-pages', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/typesPages/viewTypesPages", $this->data);
         $loadView->loadView();
     }

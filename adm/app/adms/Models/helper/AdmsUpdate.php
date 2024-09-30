@@ -13,7 +13,7 @@ use PDOException;
 /**
  * Classe gernérica para editar registro no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsUpdate extends AdmsConn
 {

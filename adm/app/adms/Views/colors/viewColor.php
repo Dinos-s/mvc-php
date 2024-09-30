@@ -7,10 +7,18 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Detalhes da Cor</h2>";
 
-echo "<a href='" . URLADM . "list-sits-users/index'>Listar</a><br>";
+if($this->data['button']['list_colors']){
+    echo "<a href='" . URLADM . "list-colors/index'>Listar</a><br>";
+}
+
 if (!empty($this->data['viewColor'])) {
-    echo "<a href='" . URLADM . "edit-colors/index/" . $this->data['viewColor'][0]['id'] . "'>Editar</a><br>";
-    echo "<a href='" . URLADM . "delete-colors/index/" . $this->data['viewColor'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    if ($this->data['button']['edit_colors']) {
+        echo "<a href='" . URLADM . "edit-colors/index/" . $this->data['viewColor'][0]['id'] . "'>Editar</a><br>";
+    }
+
+    if ($this->data['button']['delete_colors']) {
+        echo "<a href='" . URLADM . "delete-colors/index/" . $this->data['viewColor'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    }
 }
 
 if (isset($_SESSION['msg'])) {

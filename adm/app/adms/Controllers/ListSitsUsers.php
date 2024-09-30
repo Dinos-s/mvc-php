@@ -29,6 +29,17 @@ class ListSitsUsers
             $this->data['listSitsUsers'] = [];
         }
 
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'add_sits_users'=>['menu_controller'=>'add-sits-users', 'menu_metodo'=>'index'],
+            'view_sits_users'=>['menu_controller'=>'view-sits-users', 'menu_metodo'=>'index'],
+            'edit_sits_users'=>['menu_controller'=>'edit-sits-users', 'menu_metodo'=>'index'],
+            'delete_sits_users'=>['menu_controller'=>'delete-sits-users', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/sitsUser/listSitsUsers", $this->data);
         $loadView->loadView();
     }

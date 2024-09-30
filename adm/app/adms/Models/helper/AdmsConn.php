@@ -12,7 +12,7 @@ use PDOException, PDO;
 /**
  * Conexão com o banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 abstract class AdmsConn
 {

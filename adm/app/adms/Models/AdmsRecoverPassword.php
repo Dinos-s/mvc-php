@@ -9,7 +9,7 @@
     /**
      * Solicitar novo link para cadastrar nova senha
      *
-     * @author Celke
+     * @author GMR
      */
     class AdmsRecoverPassword {
         private array|null $data;

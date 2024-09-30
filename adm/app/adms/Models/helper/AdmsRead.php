@@ -13,7 +13,7 @@ use PDOException;
 /**
  * Classe gernérica para selecionar registro no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsRead extends AdmsConn
 {

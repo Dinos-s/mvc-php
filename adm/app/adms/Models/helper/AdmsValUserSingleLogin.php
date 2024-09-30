@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe genêrica para validar o usuário único, somente um cadatrado pode utilizar o usuário
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsValUserSingleLogin
 {

@@ -7,10 +7,18 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Detalhes do tipo de página</h2>";
 
-echo "<a href='" . URLADM . "list-types-pages/index'>Listar</a><br>";
+if ($this->data['button']['list_types_pages']) {
+    echo "<a href='" . URLADM . "list-types-pages/index'>Listar</a><br>";
+}
+
 if (!empty($this->data['viewTypesPages'])) {
-    echo "<a href='" . URLADM . "edit-types-pages/index/" . $this->data['viewTypesPages'][0]['id'] . "'>Editar</a><br>";
-    echo "<a href='" . URLADM . "delete-types-pages/index/" . $this->data['viewTypesPages'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    if ($this->data['button']['edit_types_pages']) {
+        echo "<a href='" . URLADM . "edit-types-pages/index/" . $this->data['viewTypesPages'][0]['id'] . "'>Editar</a><br>";
+    }
+    
+    if ($this->data['button']['delete_types_pages']) {
+        echo "<a href='" . URLADM . "delete-types-pages/index/" . $this->data['viewTypesPages'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    }
 }
 
 if (isset($_SESSION['msg'])) {
@@ -23,7 +31,10 @@ if (!empty($this->data['viewTypesPages'])) {
     extract($this->data['viewTypesPages'][0]);
     // var_dump($this->data['viewUser']);
     echo "ID: $id <br>";
-    echo "Nome: $nome><br>";
+    echo "Tipo: $type <br>";
+    echo "Nome: $name <br>";
+    echo "Ordem: $order_type_pg <br>";
+    echo "Observação: $obs <br>";
     echo "Cadastrado: " . date('d/m/Y H:i:s', strtotime($created)) . " <br>";
     echo "Editado: ";
 

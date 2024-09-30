@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe genérica para validar o e-mail
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsValEmail
 {

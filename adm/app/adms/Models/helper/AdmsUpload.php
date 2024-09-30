@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe genérica para upload
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsUpload
 {

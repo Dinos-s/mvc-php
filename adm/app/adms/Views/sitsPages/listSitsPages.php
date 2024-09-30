@@ -7,7 +7,9 @@
     echo "<h2>Listar Situação das Páginas
     </h2>";
 
-    echo "<a href='" . URLADM . "add-sits-pages/index'>Cadastrar Situação</a><br><br>";
+    if ($this->data['button']['add_sits_pages']) {
+        echo "<a href='" . URLADM . "add-sits-pages/index'>Cadastrar Situação</a><br><br>";
+    }
 
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
@@ -19,9 +21,19 @@
         extract($sitPg);
         echo "ID: $id <br>";
         echo "Nome: <span style='color: $color'>$name</span> <br>";
-        echo "<a href='" . URLADM . "view-sits-pages/index/$id'>Visualizar</a><br>";
-        echo "<a href='" . URLADM . "edit-sits-pages/index/$id'>Editar</a><br>";
-        echo "<a href='" . URLADM . "delete-sits-pages/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+
+        if ($this->data['button']['view_sits_pages']) {
+            echo "<a href='" . URLADM . "view-sits-pages/index/$id'>Visualizar</a><br>";
+        }
+        
+        if ($this->data['button']['edit_sits_pages']) {
+            echo "<a href='" . URLADM . "edit-sits-pages/index/$id'>Editar</a><br>";
+        }
+        
+        if ($this->data['button']['delete_sits_pages']) {
+            echo "<a href='" . URLADM . "delete-sits-pages/index/$id' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br>";
+        }
+        
         echo "<hr>";
     }
 

@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Editar o usuário no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsEditSitsUsers
 {

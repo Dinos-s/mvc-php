@@ -55,6 +55,15 @@
     <label>Nome:<span style="color: #f00;">*</span> </label>
     <input type="text" name="name" id="name" placeholder="Digite o nome do tipo de página" value="<?php echo $name; ?>" required><br><br>
 
+    <?php
+    $obs = "";
+    if (isset($valorForm['obs'])) {
+        $obs = $valorForm['obs'];
+    }
+    ?>
+    <label>Observação:</label>
+    <input type="text" name="obs" id="obs" placeholder="Observação" value="<?php echo $obs; ?>"> <br><br>
+
     <span style="color: #f00;">* Campo Obrigatório</span><br><br>
 
     <button type="submit" name="SendEditTypesPages" value="Salvar">Salvar</button>

@@ -47,6 +47,18 @@ class ViewConfEmails
 
     private function viewConfEmails(): void
     {
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'add_conf_emails'=>['menu_controller'=>'add-conf-emails', 'menu_metodo'=>'index'],
+            'list_conf_emails'=>['menu_controller'=>'list-conf-emails', 'menu_metodo'=>'index'],
+            'edit_conf_emails'=>['menu_controller'=>'edit-conf-emails', 'menu_metodo'=>'index'],
+            'edit_conf_emails_password'=>['menu_controller'=>'edit-conf-emails-password', 'menu_metodo'=>'index'],
+            'delete_conf_emails'=>['menu_controller'=>'delete-conf-emails', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/confEmails/viewConfEmail", $this->data);
         $loadView->loadView();
     }

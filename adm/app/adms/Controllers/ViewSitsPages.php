@@ -46,6 +46,17 @@ class ViewSitsPages
 
     private function viewSitPages(): void
     {
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'list_sits_pages'=>['menu_controller'=>'list-sits-pages', 'menu_metodo'=>'index'],
+            'view_sits_pages'=>['menu_controller'=>'view-sits-pages', 'menu_metodo'=>'index'],
+            'edit_sits_pages'=>['menu_controller'=>'edit-sits-pages', 'menu_metodo'=>'index'],
+            'delete_sits_pages'=>['menu_controller'=>'delete-sits-pages', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/sitsPages/viewSitsPages", $this->data);
         $loadView->loadView();
     }

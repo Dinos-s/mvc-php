@@ -7,10 +7,18 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Detalhes da Situação</h2>";
 
-echo "<a href='" . URLADM . "list-sits-users/index'>Listar</a><br>";
+if ($this->data['button']['list_sits_users']) {
+    echo "<a href='" . URLADM . "list-sits-users/index'>Listar</a><br>";
+}
+
 if (!empty($this->data['viewSitUser'])) {
-    echo "<a href='" . URLADM . "edit-sits-users/index/" . $this->data['viewSitUser'][0]['id'] . "'>Editar</a><br>";
-    echo "<a href='" . URLADM . "delete-sits-users/index/" . $this->data['viewSitUser'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    if ($this->data['button']['edit_sits_users']) {
+        echo "<a href='" . URLADM . "edit-sits-users/index/" . $this->data['viewSitUser'][0]['id'] . "'>Editar</a><br>";
+    }
+    
+    if ($this->data['button']['delete_sits_users']) {
+        echo "<a href='" . URLADM . "delete-sits-users/index/" . $this->data['viewSitUser'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    }
 }
 
 if (isset($_SESSION['msg'])) {

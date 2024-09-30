@@ -53,9 +53,10 @@ use function PHPSTORM_META\type;
                     $this->verifyLogin();
                 }
             } else {
-                $_SESSION['msg'] = "<p style='color: #f00'>Erro: Página não encontrada no BD!</p>";
-                $urlRedirect = URLADM ."login/index";
-                header("Location: $urlRedirect");
+                // $_SESSION['msg'] = "<p style='color: #f00'>Erro: Página não encontrada no BD!</p>";
+                // $urlRedirect = URLADM ."login/index";
+                // header("Location: $urlRedirect");
+                die("Erro - página não encontrada: Por favor tente novamente. Se o problema persistir contate o admin: ". EMAILADM);
             }
         }
 

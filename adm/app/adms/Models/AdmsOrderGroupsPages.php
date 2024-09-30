@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Alterar a ordem de acesso no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsOrderGroupsPages
 {

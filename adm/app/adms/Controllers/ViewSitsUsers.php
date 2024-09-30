@@ -47,6 +47,16 @@ class ViewSitsUsers
 
     private function viewSitUser(): void
     {
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'list_sits_users'=>['menu_controller'=>'list-sits-users', 'menu_metodo'=>'index'],
+            'edit_sits_users'=>['menu_controller'=>'edit-sits-users', 'menu_metodo'=>'index'],
+            'delete_sits_users'=>['menu_controller'=>'delete-sits-users', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/sitsUser/viewSitsUser", $this->data);
         $loadView->loadView();
     }

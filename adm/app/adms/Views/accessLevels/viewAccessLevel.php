@@ -7,10 +7,18 @@ if(!defined('C8L6K7E')){
 
 echo "<h2>Detalhes do Usuário</h2>";
 
-echo "<a href='" . URLADM . "list-access-levels/index'>Listar</a><br>";
+if ($this->data['button']['list_access_levels']) {
+    echo "<a href='" . URLADM . "list-access-levels/index'>Listar</a><br>";
+}
+
 if (!empty($this->data['viewAccessLevels'])) {
-    echo "<a href='" . URLADM . "edit-access-levels/index/" . $this->data['viewAccessLevels'][0]['id'] . "'>Editar</a><br>";
-    echo "<a href='" . URLADM . "delete-access-levels/index/" . $this->data['viewAccessLevels'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    if ($this->data['button']['edit_access_levels']) {
+        echo "<a href='" . URLADM . "edit-access-levels/index/" . $this->data['viewAccessLevels'][0]['id'] . "'>Editar</a><br>";
+    }
+    
+    if ($this->data['button']['delete_access_levels']){
+        echo "<a href='" . URLADM . "delete-access-levels/index/" . $this->data['viewAccessLevels'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+    }   
 }
 
 if (isset($_SESSION['msg'])) {

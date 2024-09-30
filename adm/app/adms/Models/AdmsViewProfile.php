@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Visualizar o perfil do usuario
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsViewProfile
 {

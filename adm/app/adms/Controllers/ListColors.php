@@ -29,6 +29,17 @@ class ListColors
             $this->data['listColors'] = [];
         }
 
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'add_colors'=>['menu_controller'=>'add-colors', 'menu_metodo'=>'index'],
+            'view_colors'=>['menu_controller'=>'view-colors', 'menu_metodo'=>'index'],
+            'edit_colors'=>['menu_controller'=>'edit-colors', 'menu_metodo'=>'index'],
+            'delete_colors'=>['menu_controller'=>'delete-colors', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/colors/listColors", $this->data);
         $loadView->loadView();
     }

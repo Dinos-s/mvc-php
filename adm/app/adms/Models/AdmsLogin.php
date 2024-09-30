@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Validar os dados do login
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsLogin
 {

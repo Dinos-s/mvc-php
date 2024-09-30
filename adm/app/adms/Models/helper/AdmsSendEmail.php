@@ -14,7 +14,7 @@ use PHPMailer\PHPMailer\Exception;
 /**
  * Classe genérica para enviar e-mail
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsSendEmail
 {

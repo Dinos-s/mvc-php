@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Classe genérica para converter o SLUG
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsSlug
 {

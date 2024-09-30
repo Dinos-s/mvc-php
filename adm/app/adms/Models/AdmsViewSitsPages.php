@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Visualizar o usuário no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsViewSitsPages
 {
@@ -46,7 +46,7 @@ class AdmsViewSitsPages
 
         $viewPage = new \App\adms\Models\helper\AdmsRead();
         $viewPage->fullRead(
-            "SELECT sit_pgs.id, sit_pgs.name, sit_pgs.created, sit_pgs.modified, col.color
+            "SELECT sit_pgs.id, sit_pgs.name, sit_pgs.created, sit_pgs.modificado, col.color
             FROM adms_sits_pgs AS sit_pgs
             INNER JOIN adms_colors AS col ON col.id=sit_pgs.adms_color_id
             WHERE sit_pgs.id=:id

@@ -29,6 +29,18 @@ class ListUsers
             $this->data['listUsers'] = [];
         }
 
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'add_users'=>['menu_controller'=>'add-users', 'menu_metodo'=>'index'],
+            'list_users'=>['menu_controller'=>'list-users', 'menu_metodo'=>'index'],
+            'view_users'=>['menu_controller'=>'view-users', 'menu_metodo'=>'index'],
+            'edit_users'=>['menu_controller'=>'edit-users', 'menu_metodo'=>'index'],
+            'delete_users'=>['menu_controller'=>'delete-users', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/users/listUsers", $this->data);
         $loadView->loadView();
     }

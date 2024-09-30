@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Listar os usuários do banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsListColors
 {

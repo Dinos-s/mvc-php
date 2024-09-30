@@ -29,6 +29,17 @@ class ListTypesPages
         }else{
             $this->data['listTypesPages'] = [];
         }
+
+        $button = [
+            'add_types_pages'=>['menu_controller'=>'add-types-pages', 'menu_metodo'=>'index'],
+            'order_types_pages'=>['menu_controller'=>'order-types-pages', 'menu_metodo'=>'index'],
+            'view_types_pages'=>['menu_controller'=>'view-types-pages', 'menu_metodo'=>'index'],
+            'edit_types_pages'=>['menu_controller'=>'edit-types-pages', 'menu_metodo'=>'index'],
+            'delete_types_pages'=>['menu_controller'=>'delete-types-pages', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
         
         $this->data['pag'] = $this->page;
         $loadView = new \Core\ConfigView("adms/Views/typesPages/listTypesPages", $this->data);

@@ -47,6 +47,16 @@ class ViewPages
 
     private function viewPages(): void
     {
+        // variavel para ocultar caso o usuário não tenha a permissão
+        $button = [
+            'list_pages'=>['menu_controller'=>'list-pages', 'menu_metodo'=>'index'],
+            'edit_pages'=>['menu_controller'=>'edit-pages', 'menu_metodo'=>'index'],
+            'delete_pages'=>['menu_controller'=>'delete-pages', 'menu_metodo'=>'index']
+        ];
+
+        $listBtns = new \App\adms\Models\helper\AdmsButton();
+        $this->data['button'] = $listBtns->buttonPermission($button);
+
         $loadView = new \Core\ConfigView("adms/Views/pages/viewPages", $this->data);
         $loadView->loadView();
     }

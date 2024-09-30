@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Editar o Nível de acesso no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsEditAccessLevels
 {

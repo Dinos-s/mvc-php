@@ -10,7 +10,7 @@ if(!defined('C8L6K7E')){
 /**
  * Confirmar o cadastro do usuário, alterando a situação no banco de dados
  *
- * @author Celke
+ * @author GMR
  */
 class AdmsConfEmail
 {
