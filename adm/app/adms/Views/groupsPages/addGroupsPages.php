@@ -30,7 +30,7 @@ if (isset($_SESSION['msg'])) {
     }
     ?>
     <label>Nome do Grupo<span style="color: #f00;">*</span> </label>
-    <input type="text" name="name_page" id="name_page" placeholder="Nome do grupo" value="<?php echo $name; ?>" required><br><br>
+    <input type="text" name="name" id="name" placeholder="Nome do grupo" value="<?php echo $name; ?>" required><br><br>
 
     <span style="color: #f00;">* Campo Obrigatório</span><br><br>
 
