@@ -8,7 +8,7 @@ if(!defined('C8L6K7E')){
 }
 
 /**
- * Classe gernérica para selecionar registro no banco de dados
+ * Classe para bloquear os butões em diferentes niveis de acesso
  *
  * @author GMR
  */

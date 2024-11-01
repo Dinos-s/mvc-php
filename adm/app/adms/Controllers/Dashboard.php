@@ -24,8 +24,11 @@ class Dashboard
      */
     public function index():void
     {
-        $this->data = "Bem vindo";
+        // $this->data = "Bem vindo";
 
+        $listMenu = new \App\adms\Models\helper\AdmsMenu();
+        $this->data['menu'] = $listMenu->itemMenu();
+        
         $loadView = new \Core\ConfigView("adms/Views/dashboard/dashboard", $this->data);
         $loadView->loadView();
     }
