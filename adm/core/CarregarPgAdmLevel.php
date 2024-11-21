@@ -71,7 +71,7 @@ use function PHPSTORM_META\type;
 
         // verifica se o usuário está logado;
         private function verifyLogin(): void {
-            if((isset($_SESSION['user_id'])) and (isset($_SESSION['user_name'])) and (isset($_SESSION['user_email'])) and ($_SESSION['adms_access_levels_id']) and ($_SESSION['order_levels'])) {
+            if((isset($_SESSION['user_id'])) and (isset($_SESSION['user_name'])) and (isset($_SESSION['user_email'])) and (isset($_SESSION['adms_access_levels_id'])) and (isset($_SESSION['order_levels']))) {
                 $this->searchLevelPages();
             }else{
                 $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Para acessar a página realize o login!</p>";

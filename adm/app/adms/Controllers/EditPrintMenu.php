@@ -9,7 +9,7 @@
     /** 
      * Controller para editar a permissão
     */
-    class EditPermission {
+    class EditPrintMenu {
         private array|string|null $data = [];
         private array|null $dataForm;
         private string|int|null $id;
@@ -26,14 +26,14 @@
             $this->pag = filter_input(INPUT_GET, "pag", FILTER_SANITIZE_NUMBER_INT);
 
             if ((!empty($this->id)) and (!empty($this->level) and (!empty($this->pag)))) {
-                $editPermission = new \App\adms\Models\AdmsEditPermission();
-                $editPermission->editPermission($this->id);
+                $editPrintMenu = new \App\adms\Models\AdmsEditPrintMenu();
+                $editPrintMenu->editPrintMenu($this->id);
 
                 $urlRedirect = URLADM ."list-permission/index/{$this->pag}?level={$this->level}";
                 header("Location: $urlRedirect");
             } else {
                 $_SESSION['msg'] = "<p style='color: #f00'>Erro: Necessário selecionar uma página para mudar a permissão!</p>";
-                $urlRedirect = URLADM ."list-access-levels/index/{$this->pag}?level={$this->level}";
+                $urlRedirect = URLADM ."list-access-levels/index";
                 header("Location: $urlRedirect");
             }
         }

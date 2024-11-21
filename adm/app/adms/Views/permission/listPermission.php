@@ -26,6 +26,13 @@ foreach ($this->data['listPermission'] as $permission) {
     } else {
         echo "Permissão: <a href='". URLADM ."edit-permission/index/$id?&level=$adms_access_level_id&pag=". $this->data['pag'] ."'><span style='color: #f00'>Negado</span></a>";
     }
+    echo " ";
+    if ($print_menu == 1) {
+        echo "Menu: <a href='". URLADM ."edit-print-menu/index/$id?&level=$adms_access_level_id&pag=". $this->data['pag'] ."'><span style='color: green'>Mostrar</span></a>";
+    } else {
+        echo "Menu: <a href='". URLADM ."edit-print-menu/index/$id?&level=$adms_access_level_id&pag=". $this->data['pag'] ."'><span style='color: #f00'>Olcultar</span></a>";
+    }
+
     // echo "Permissão: $permission <br>";
     echo "<hr>";
 }

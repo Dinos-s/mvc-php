@@ -56,7 +56,7 @@ class AdmsListAccessLevels
 
         $listAccessLevels = new \App\adms\Models\helper\AdmsRead();
         $listAccessLevels->fullRead(
-            "SELECT id, name, order_levels AS orderLev FROM adms_access_levels WHERE order_levels >:order_levels ORDER BY order_levels ASC LIMIT :limit OFFSET :offset", "order_levels=". $_SESSION['order_levels'] ."&limit={$this->limitResult}&offset={$pagination->getOffset()}"
+            "SELECT id, name, order_levels AS orderLev FROM adms_access_levels WHERE order_levels >=:order_levels ORDER BY order_levels ASC LIMIT :limit OFFSET :offset", "order_levels=". $_SESSION['order_levels'] ."&limit={$this->limitResult}&offset={$pagination->getOffset()}"
         );
 
         $this->resultBD = $listAccessLevels->getResult();        
