@@ -116,7 +116,7 @@ class AdmsEditPages
         $registry['sit_pg'] = $list->getResult();
 
         $listType = new \App\adms\Models\helper\AdmsRead();
-        $listType->fullRead("SELECT id id_type, name name_type  FROM adms_types_pgs ORDER BY name ASC");
+        $listType->fullRead("SELECT id id_type, type, name name_type  FROM adms_types_pgs ORDER BY name ASC");
         $registry['type_pg'] = $listType->getResult();
 
         $listGroup = new \App\adms\Models\helper\AdmsRead();

@@ -49,8 +49,12 @@ class AdmsEditPermission {
             FROM adms_levels_pages lev_pg
             INNER JOIN adms_access_levels AS lev 
             ON lev.id = lev_pg.adms_access_level_id
+            LEFT JOIN adms_pages AS pag ON pag.id = lev_pg.adms_page_id
             WHERE lev_pg.id =:id 
             AND lev.order_levels >:order_levels
+            AND (((SELECT permission FROM adms_levels_pages WHERE adms_page_id=lev_pg.adms_page_id 
+            AND adms_access_level_id = {$_SESSION['adms_access_levels_id']}) = 1) 
+            OR (publish = 1))
             LIMIT :limit", 
             "id={$this->id}&order_levels=". $_SESSION['order_levels'] ."&limit=1"
         );
