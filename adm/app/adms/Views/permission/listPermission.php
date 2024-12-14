@@ -32,6 +32,8 @@ foreach ($this->data['listPermission'] as $permission) {
     } else {
         echo "Menu: <a href='". URLADM ."edit-print-menu/index/$id?&level=$adms_access_level_id&pag=". $this->data['pag'] ."'><span style='color: #f00'>Olcultar</span></a>";
     }
+    echo " ";
+    echo "Ordem do menu: <a href='". URLADM ."order-page-menu/index/$id?&level=$adms_access_level_id&pag=". $this->data['pag'] ."'>Ordem</a>";
 
     // echo "Permissão: $permission <br>";
     echo "<hr>";

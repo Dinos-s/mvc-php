@@ -13,11 +13,11 @@ if ($this->data['button']['list_pages']) {
 
 if (!empty($this->data['viewPages'])) {
     if ($this->data['button']['edit_pages']) {
-        echo "<a href='" . URLADM . "edit-pages/index/" . $this->data['viewPage'][0]['id'] . "'>Editar</a><br>";
+        echo "<a href='" . URLADM . "edit-pages/index/" . $this->data['viewPages'][0]['id'] . "'>Editar</a><br>";
     }
     
     if ($this->data['button']['delete_pages']) {
-        echo "<a href='" . URLADM . "delete-pages/index/" . $this->data['viewPage'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
+        echo "<a href='" . URLADM . "delete-pages/index/" . $this->data['viewPages'][0]['id'] . "' onclick='return confirm(\"Tem certeza que desaja apagar este registro?\")'>Apagar</a><br><br>";
     }
 }
 
@@ -27,7 +27,7 @@ if (isset($_SESSION['msg'])) {
 }
 
 if (!empty($this->data['viewPages'])) {
-    //var_dump($this->data['viewPages'][0]);
+    // var_dump($this->data['viewPages'][0]);
     extract($this->data['viewPages'][0]);
     // var_dump($this->data['viewPages']);
 
