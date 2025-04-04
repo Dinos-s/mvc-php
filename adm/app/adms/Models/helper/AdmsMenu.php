@@ -23,7 +23,7 @@ class AdmsMenu {
             "SELECT lev_pag.id as id_lev_pag, lev_pag.adms_page_id, pag.id AS id_pag, pag.menu_controller, pag.menu_metodo, pag.name_page, pag.icon
             FROM adms_levels_pages AS lev_pag
             INNER JOIN adms_pages AS pag ON pag.id=lev_pag.adms_page_id
-            WHERE ((lev_pag.adms_access_level_id =:adms_access_level_id))
+            WHERE lev_pag.adms_access_level_id =:adms_access_level_id
             AND print_menu = 1
             ORDER BY lev_pag.order_level_page ASC",
             "adms_access_level_id=".$_SESSION['adms_access_levels_id']

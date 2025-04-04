@@ -40,8 +40,8 @@
             $viewUser = new \App\adms\Models\helper\AdmsRead();
             $viewUser->fullRead(
                 "SELECT id, image 
-                                FROM adms_users
-                                WHERE id=:id",
+                FROM adms_users
+                WHERE id=:id",
                 "id=" . $_SESSION['user_id']);
 
             $this->resultBD = $viewUser->getResult();

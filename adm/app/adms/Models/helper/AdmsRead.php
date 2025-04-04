@@ -7,8 +7,7 @@ if(!defined('C8L6K7E')){
     die("Erro: Página não encontrada<br>");
 }
 
-use PDO;
-use PDOException;
+use PDO, PDOException;
 
 /**
  * Classe gernérica para selecionar registro no banco de dados
